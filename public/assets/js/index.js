@@ -1,14 +1,17 @@
-let noteTitle;
-let noteText;
-let saveNoteBtn;
-let newNoteBtn;
-let noteList;
+const note = {
+  title,
+  text,
+  saveBtn,
+  newBtn,
+  noteList: []
+}
+
 
 if (window.location.pathname === '/notes') {
-  noteTitle = document.querySelector('.note-title');
-  noteText = document.querySelector('.note-textarea');
-  saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
+  note.title = document.querySelector('.note-title');
+  note.text = document.querySelector('.note-textarea');
+  note.saveBtn = document.querySelector('.save-note');
+  note.newBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
