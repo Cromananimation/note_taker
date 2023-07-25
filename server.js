@@ -4,7 +4,7 @@ const path = require('path');
 const router = require('./notes');
 
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 5001;
 
 app.use('/feedback', feedbackRouter);
 app.use(express.urlencoded({ extended: false }));
@@ -13,8 +13,8 @@ app.use("/", router)
 // app.get('/send', (req, res) => res.sendFile(path.join(__dirname, 'public/sendFile.html')));
 // app.get('/routes', (req, res) => res.sendFile(path.join(__dirname, 'public/routes.html')));
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port} 
+app.listen(PORT, () => {
+    console.log(`Server listening at http://localhost:${PORT} 
     Press Ctrl + C to quit...`);
 });
 
