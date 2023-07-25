@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 app.use('/feedback', feedbackRouter);
-app.use('/public')
+app.use(express.static('/public'))
 app.use(express.urlencoded({ extended: false }));
 app.use("/", router)
 // app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html')));
