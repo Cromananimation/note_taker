@@ -177,10 +177,10 @@ const renderNoteList = async (notes) => {
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
-  saveNoteBtn.addEventListener('click', handleNoteSave);
-  newNoteBtn.addEventListener('click', handleNewNoteView);
-  noteTitle.addEventListener('keyup', handleRenderSaveBtn);
-  noteText.addEventListener('keyup', handleRenderSaveBtn);
+  note.saveBtn.addEventListener('click', handleNoteSave);
+  note.newBtn.addEventListener('click', handleNewNoteView);
+  note.title.addEventListener('keyup', handleRenderSaveBtn);
+  note.text.addEventListener('keyup', handleRenderSaveBtn);
 }
 
 getAndRenderNotes();
