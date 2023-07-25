@@ -1,8 +1,8 @@
 const note = {
-  title,
-  text,
-  saveBtn,
-  newBtn,
+  title: undefined,
+  text: undefined,
+  saveBtn: undefined,
+  newBtn: undefined,
   noteList: []
 }
 
@@ -12,7 +12,7 @@ if (window.location.pathname === '/notes') {
   note.text = document.querySelector('.note-textarea');
   note.saveBtn = document.querySelector('.save-note');
   note.newBtn = document.querySelector('.new-note');
-  noteList = document.querySelectorAll('.list-container .list-group');
+  note.noteList = document.querySelectorAll('.list-container .list-group');
 }
 
 // Show an element
