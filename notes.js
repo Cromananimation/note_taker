@@ -1,7 +1,8 @@
 const express = require('express');
-const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
-const uuid = require('./helpers/uuid');
+const { readFromFile, readAndAppend, writeToFile } = require('./helpers/fsUtils');
+const uuid = require('uuid');
 const path = require("path");
+const { writeFile } = require('fs');
 
 const router = express.Router();
 
@@ -36,8 +37,7 @@ router.route('/api/notes')
       const newNote = {
         title,
         text,
-        id: node uuid-crypto.js 
-        00a6fa25-df29-4701-9077-557932591766
+        id: uuid.v4()
       };
   
       readAndAppend(newNote, './db/db.json');
@@ -45,10 +45,21 @@ router.route('/api/notes')
     }
   })
 
-// router.route('/api/notes/:id')
-//   .delete((req, res) => {
-//     console.log(req)
-//   })
+router.route('/api/notes/:id')
+  .delete((req, res) => {
+    const id = req.params.id;
+    readFromFile(__dirname + "/db/db.json", 'utf-8').then(data => { 
+      const formattedData = JSON.parse(data)
+      console.log ("data",formattedData)
+      // Object.entries(res).forEach((entry, index) => {
+      //   if (entry.id == id) {
+      //     delete data[index]
+      //     writeToFile(__dirname + "/db/db.json", 'utf-8', _data)
+      //     breakl
+      //   } 
+      //});
+    })
+  })
 
 
 
